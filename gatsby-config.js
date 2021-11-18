@@ -1,17 +1,24 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `SUPER ATOM DEVLOG`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `JUSEOK LEE`,
+      summary: `FRONTEND DEVELOPER & VISUAL DESIGNER & ARTIST`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `디벨로퍼 슈퍼아톰 데브로그`,
     siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
     social: {
-      twitter: `kylemathews`,
+      twitter: `super777atom`,
+    },
+    comments: {
+      utterances: {
+        repo: ``, // `zoomkoding/zoomkoding-gatsby-blog`,
+      },
     },
   },
   plugins: [
+    `gatsby-plugin-postcss`,
+    `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -43,6 +50,17 @@ module.exports = {
               wrapperStyle: `margin-bottom: 1.0725rem`,
             },
           },
+          {
+            resolve: `gatsby-remark-table-of-contents`,
+            options: {
+              exclude: "Table of Contents",
+              tight: false,
+              ordered: false,
+              fromHeading: 2,
+              toHeading: 6,
+              className: "table-of-contents",
+            },
+          },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
           `gatsby-remark-smartypants`,
@@ -51,12 +69,12 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    // {
-    //   resolve: `gatsby-plugin-google-analytics`,
-    //   options: {
-    //     trackingId: `ADD YOUR TRACKING ID HERE`,
-    //   },
-    // },
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: `UA-89830004-1`,
+      },
+    },
     {
       resolve: `gatsby-plugin-feed`,
       options: {
